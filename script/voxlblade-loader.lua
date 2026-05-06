@@ -1,3 +1,12 @@
+getgenv().SX_VM_CNONE = getgenv().SX_VM_CNONE or function() end
+getgenv().getServerConstant = getgenv().getServerConstant or function(v)
+    return v
+end
+
+getgenv().clonefunction = getgenv().clonefunction or function(f)
+    return f
+end
+
 local BASE = "https://raw.githubusercontent.com/XDar4kX/Testing00/main/script/files/"
 
 local cache = {}
