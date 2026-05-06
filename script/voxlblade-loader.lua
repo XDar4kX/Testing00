@@ -1,24 +1,22 @@
+local BASE = "https://raw.githubusercontent.com/XDar4kX/Testing00/main/script/files/"
+
 getgenv().SX_VM_CNONE = getgenv().SX_VM_CNONE or function() end
 getgenv().getServerConstant = getgenv().getServerConstant or function(v)
     return v
 end
-
 getgenv().clonefunction = getgenv().clonefunction or function(f)
     return f
 end
-
-local BASE = "https://raw.githubusercontent.com/XDar4kX/Testing00/main/script/files/"
 
 local cache = {}
 
 getgenv().sharedRequire = function(path)
     path = path:gsub("^@", "")
     path = path:gsub("^/", "")
-
+    path = path:gsub("^%./", "utils/")
+    path = path:gsub("^%.%./", "")
     path = path:gsub("^Utils/", "utils/")
-    path = path:gsub("^utils/", "utils/")
     path = path:gsub("^Classes/", "classes/")
-    path = path:gsub("^classes/", "classes/")
 
     if cache[path] then
         return cache[path]
